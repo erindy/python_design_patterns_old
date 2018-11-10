@@ -3,6 +3,8 @@ The idea of Builder design pattern is to seperate the construction of a complex
 object from its representation so that the same construction process can create
 different representations.
 """
+from copy import deepcopy
+
 
 class Car:
     def __init__(self):
@@ -26,6 +28,9 @@ class Car:
         print("engine horsepower: %d" % self.__engine.horsepower)
         print("tire size: %d\'" % self.__wheels[0].size)
 
+    # this method will make it a prototype class
+    def clone(self):
+        return deepcopy(self)
 
 # === Car parts ===
 class Wheel:

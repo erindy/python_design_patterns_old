@@ -1,6 +1,9 @@
-from patterns import factory
-from patterns import abstract_factory
-from patterns import builder
+from patterns import (
+    factory,
+ abstract_factory,
+ builder,
+ prototype
+)
 
 
 def test_factory():
@@ -22,6 +25,22 @@ def test_builder():
     d.setBuilder(builder.JeepBuilder())
     d.getCar()
     d.getCar().specification()
+
+
+def test_prototype():
+    d = builder.Director()
+    d.setBuilder(builder.JeepBuilder())
+
+    jeep = d.getCar().specification()
+
+    jeep2 = jeep.clone()
+
+def test_prototype_2():
+    p0 = prototype.Point(0,0)
+    p0.__str__()
+    p1 = p0.clone(1,1)
+    p1.__str__()
+
 
 
 
