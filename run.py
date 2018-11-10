@@ -1,5 +1,6 @@
 from patterns import factory
 from patterns import abstract_factory
+from patterns import builder
 
 
 def test_factory():
@@ -16,7 +17,13 @@ def test_abstract_factory():
     s3 = abstract_factory.Shape3DFactory()
     s3.getShape(1).build()
 
+def test_builder():
+    d = builder.Director()
+    d.setBuilder(builder.JeepBuilder())
+    d.getCar()
+    d.getCar().specification()
+
 
 
 if __name__ == '__main__':
-    test_abstract_factory()
+    test_builder()
