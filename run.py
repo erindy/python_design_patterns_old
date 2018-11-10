@@ -1,9 +1,11 @@
-from patterns import (
+from patterns.creational import (
     factory,
- abstract_factory,
- builder,
- prototype
+    builder,
+ prototype,
+ singleton,
+ borg
 )
+from patterns.creational import abstract_factory
 
 
 def test_factory():
@@ -43,6 +45,33 @@ def test_prototype_2():
 
 
 
+def test_singleton():
+    x = singleton.Singleton()
+    x.val = "burger"
+
+    y = singleton.Singleton()
+    y.val = "Chips"
+
+    print(x == y)
+
+
+def test_borg():
+    x = borg.Borg()
+
+
+    y = borg.Borg()
+
+
+    print(x == y)
+
+
+def singleton_modules():
+    pass
+
+
+
+
+
 
 if __name__ == '__main__':
-    test_builder()
+    test_borg()
