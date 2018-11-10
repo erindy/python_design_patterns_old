@@ -7,6 +7,9 @@ from patterns.creational import (
 )
 from patterns.creational import abstract_factory
 
+from patterns.structural import (
+facade
+)
 
 def test_factory():
     f = factory.ShapeFactory()
@@ -70,8 +73,13 @@ def singleton_modules():
 
 
 
+def test_facade():
+    c = facade.Car()
+    c.turn_key()
+    c.jump()
+    c.turn_key()
 
 
 
 if __name__ == '__main__':
-    test_borg()
+    test_facade()
