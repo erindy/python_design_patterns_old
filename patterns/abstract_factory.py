@@ -1,3 +1,16 @@
+"""
+ Abstract factory pattern provide an interface for creating
+ families of related objects without specifying their concrete
+ classes.
+ 
+ How to build an abstract Factory
+    1. Create the family of interfaces or abstract base classes
+    2. Create the concrete classes for each of these.
+    3. Create an abstract factory which applies to the whole family.
+    4. Create a concrete factory for each base class.
+"""
+
+
 class Shape2DInterface:
     def draw(self): pass
 
